@@ -59,17 +59,18 @@ try:
     # Set the delay between steps
     delay = 0.001
     while True:
+        print("stepping motor forwared")
         # Move the stepper motor one revolution in a clockwise direction
-        step_forward(delay, STEP_PER_REVOLUTION)
+        step_forward(delay, 10*STEP_PER_REVOLUTION)
 
         # Pause for 5 seconds
-        time.sleep(5)
+        time.sleep(2.5)
 
         # Move the stepper motor one revolution in an anticlockwise direction
-        step_backward(delay, STEP_PER_REVOLUTION)
+        # step_backward(delay, STEP_PER_REVOLUTION)
 
         # Halt for 5 seconds
-        time.sleep(5)
+        # time.sleep(2.5)
 
 except KeyboardInterrupt:
     print("\nExiting the script.")
