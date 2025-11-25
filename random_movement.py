@@ -34,14 +34,15 @@ def step_motor(steps, direction=1, delay=0.01):
     #ENA.value = 0  # Disable Motor 1
     #ENB.value = 0  # Disable Motor 2
 
-step_sequence = [25, 50, 10, 15]
-direction_sequence = [1, -1, 1, 1]
+step_list = [25, 50, 10, 15]
+direction_list = [1, -1, 1, 1]
 
 ind = 0
-max_index = len(step_sequence)
+max_index = len(step_list)
 
 while True:
-    step_motor(step_sequence[ind], direction_sequence[ind])
+    ind += 1
+    step_motor(step_list[ind], direction_list[ind])
     if ind >= max_index:
         ind = 0
     sleep(4)
