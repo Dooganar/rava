@@ -3,15 +3,15 @@ from gpiozero import OutputDevice, PWMOutputDevice
 from time import sleep
 
 # Pin Definitions
-IN1 = OutputDevice(14)
-IN2 = OutputDevice(15)
-IN3 = OutputDevice(18)
-IN4 = OutputDevice(23)
+IN1 = OutputDevice(12)
+IN2 = OutputDevice(16)
+IN3 = OutputDevice(20)
+IN4 = OutputDevice(21)
 # ENA = PWMOutputDevice(17)  # ENA for Motor 1
 # ENB = PWMOutputDevice(27)  # ENB for Motor 2
 
 # Define step sequence for the motor
-step_sequence = [
+step_sequence_old = [
     [1, 0, 0, 0],
     [1, 1, 0, 0],
     [0, 1, 0, 0],
@@ -21,6 +21,14 @@ step_sequence = [
     [0, 0, 0, 1],
     [1, 0, 0, 1]
 ]
+
+step_sequence = [
+    [1, 0, 0, 0],
+    [1, 1, 0, 0],
+    [0, 1, 0, 0],
+    [0, 1, 1, 0]
+]
+
 
 def set_step(w1, w2, w3, w4):
     IN1.value = w1
