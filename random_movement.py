@@ -41,9 +41,9 @@ ind = 0
 max_index = len(step_list)
 
 while True:
-    ind += 1
     step_motor(step_list[ind], direction_list[ind])
     if ind >= max_index:
         ind = 0
     sleep(4)
+    ind += 1
 
